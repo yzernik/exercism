@@ -1,19 +1,11 @@
 (ns anagram)
 
-(defn- canonicalize [word]
-  (sort (clojure.string/lower-case word)))
-
-(defn- same-anagram? [w1 w2]
-  (= (canonicalize w1)
-     (canonicalize w2)))
-
-(defn- same-word? [w1 w2]
-  (= (clojure.string/lower-case w1)
-     (clojure.string/lower-case w2)))
-
-(defn- valid-anagram? [w1 w2]
-  (and (not (same-word? w1 w2))
-       (same-anagram? w1 w2)))
+(defn- anagram? [word1 word2]
+  (let [lower1 (clojure.string/lower-case word1)
+        lower2 (clojure.string/lower-case word2)
+        same-word (= lower1 lower2)
+        same-anagram (= (sort lower1) (sort lower2))]
+    (and same-anagram (not same-word))))
 
 (defn anagrams-for [word candidates]
-  (filter #(valid-anagram? word %) candidates))
+  (filter #(anagram? word %) candidates))
