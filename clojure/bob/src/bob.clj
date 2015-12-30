@@ -1,18 +1,17 @@
 (ns bob)
 
-(defn- question? [prompt]
+(defn- asked? [prompt]
   (= \? (last prompt)))
 
-(defn- yell? [prompt]
-  (and (= prompt (clojure.string/upper-case prompt))
+(defn- yelled? [prompt]
+  (and (not-any? #(Character/isLowerCase %) prompt)
        (some #(Character/isLetter %) prompt)))
 
-(defn- nothing? [prompt]
+(defn- said-nothing? [prompt]
   (clojure.string/blank? prompt))
 
-(defn response-for
-  [prompt]
-  (cond (nothing? prompt) "Fine. Be that way!"
-        (yell? prompt) "Whoa, chill out!"
-        (question? prompt) "Sure."
+(defn response-for [prompt]
+  (cond (said-nothing? prompt) "Fine. Be that way!"
+        (yelled? prompt) "Whoa, chill out!"
+        (asked? prompt) "Sure."
         :else "Whatever."))
