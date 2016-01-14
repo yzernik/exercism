@@ -1,0 +1,23 @@
+# SBT
+boot/
+lib_managed/
+target/
+.history
+
+# Eclipse
+.cache
+.classpath
+.project
+.scala_dependencies
+.settings
+.target/
+
+# IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+out/
+
+# TextMate
+*.tmproj
