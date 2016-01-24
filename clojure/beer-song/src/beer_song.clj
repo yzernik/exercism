@@ -14,19 +14,14 @@
         :else "Take one down and pass it around"))
 
 (defn verse [n]
-  (str
-   (clojure.string/capitalize
-    (str
-     (bottles n) " of beer on the wall, "
-     (bottles n) " of beer.\n"))
-   (clojure.string/capitalize
-    (str
-     (action n) ", "
-     (bottles (next-n n)) " of beer on the wall.\n"))))
+  (format "%s of beer on the wall, %s of beer.\n%s, %s of beer on the wall.\n"
+          (clojure.string/capitalize (bottles n))
+          (bottles n)
+          (action n)
+          (bottles (next-n n))))
 
 (defn sing
-  ([n m] (->> (range m (inc n))
-              (reverse)
+  ([n m] (->> (range n (dec m) -1)
               (map verse)
               (clojure.string/join "\n")))
   ([n] (sing n 0)))
