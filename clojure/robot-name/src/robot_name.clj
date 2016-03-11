@@ -14,12 +14,6 @@
                 (take 2 (repeatedly #(rand-nth chars)))
                 (take 3 (repeatedly #(rand-nth nums)))))))
 
-(defn update-name
-  "Update"
-  [name]
-  (or name
-      (make-name)))
-
 (defn robot-name
   "Get the name of the robot"
   [robot]
