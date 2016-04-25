@@ -8,12 +8,10 @@ Given `"listen"` and a list of candidates like `"enlists" "google"
 
 ## Getting Started
 
-Make sure you have read the [getting started with C][getting-started]
-page on the [exercism help site](http://help.exercism.io/). This covers
+Make sure you have read the
+[C page](http://exercism.io/languages/c) on the exercism site. This covers
 the basic information on setting up the development environment expected
 by the exercises.
-
-[getting-started]: http://help.exercism.io/getting-started-with-c.html
 
 
 ## Passing the Tests
@@ -41,4 +39,4 @@ low-level algorithms or facilities by hand.
 
 ## Source
 
-Inspired by the Extreme Startup game [view source](https://github.com/rchatley/extreme_startup)
+Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
